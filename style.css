@@ -1,0 +1,207 @@
+*,
+*::before,
+*::after{
+    margin: 0;/* top mein ek dum sabse upar */
+    padding: 0;/* because of this I see a little change in the size of add task box */
+    box-sizing: border-box;
+
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;/* because of this our body content will be shown at the centre "VERTICALLY" of the webpage */
+    justify-content: center;/* because of this our body content will be shown at the centre "HORIZONTALLY" of the webpage */
+background: url(./images/img.jpg);
+background-position: center;
+background-size: cover;
+}
+
+.conatiner{
+width: 500px;
+height: auto;
+min-height: 400px;
+padding: 30px;
+background-color: rgba(231, 231, 231, 0.155);
+border: 3px solid rgba(35, 58, 84, 0.687);
+border-radius: 15px;
+backdrop-filter: blur(3px) ;
+
+}
+
+h1{
+    color: rgb(4, 69, 83);
+text-align: center;
+margin: 20px;
+}
+
+.input-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.todo-input{
+    flex: 1;/* because of this add to task itna bada sa dikh raha hai */
+    outline: none;
+    padding: 10px 10px 10px 20px;
+    background-color: transparent;
+    border: 2px solid rgb(52, 40, 40);
+    border-radius: 30px;
+    color: rgb(3, 3, 3);
+    font-size: 16px;
+    margin-right: 10px;/* '10px' gap b/w coloumn and plus btn */
+}
+
+.todo-input::placeholder{
+    color:none;
+}
+
+.add-button{
+    border: none;
+    outline: none;
+    background: rgb(126, 155, 188);
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    border-radius: 40px;
+    width: 40px;
+    height: 40px;
+
+}
+
+.todo{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(121, 151, 185);
+    border-radius: 5px;
+    margin: 10px 0px; /* 1st is for 'HORIZONTAL' 2nd is for 'VERTICAL' */
+    padding: 10px 12px;
+    border: 2px solid rgb(38, 66, 67);
+    transition: all 0.2s ease;
+}
+
+.todo:first-child{
+    margin-top: 0;
+}
+
+.todo:last-child{
+    margin-bottom: 0;
+}
+
+.todo:hover{
+    background-color: rgb(15, 133, 211);
+}
+
+.todo label{
+    cursor: pointer;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+font-family: 'Roboto', sans-serif;
+color: #000000;
+font-size: 20px;
+}
+
+.todo span{
+    padding-left: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+span::before{
+    content: "";
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin-left: -36px;
+    border-radius: 100px;
+    border: 2px solid rgb(96, 92, 92);
+}
+
+input[type='checkbox']{
+    visibility: hidden;
+}
+
+input:checked + span {
+    text-decoration: line-through
+  }
+  
+  .todo:hover input:checked + span::before, input:checked + span::before {
+    background:  #29e4b6;
+    border-color: #3535b0;
+  }
+  
+  .todo:hover span::before {
+    border-color: #d45858;
+  }
+  
+  .todo .delete-btn  {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #eee;
+    font-size: 24px;
+  }
+
+  .todos-container{
+    height: 300px;
+    overflow: overlay;
+  }
+
+  .todos-container::-webkit-scrollbar-track{
+    background: rgb(230, 230, 230);
+border-radius: 20px;
+  }
+
+  .todos-container::-webkit-scrollbar{
+    width: 0;
+  }
+
+  .todos-container:hover::-webkit-scrollbar{
+    width: 7px
+  }
+
+  .todos-container::-webkit-scrollbar-thumb{
+    background: rgb(188, 188, 188);
+    border-radius: 20px;
+  }
+
+  .filters{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  .filter{
+    color: rgb(8, 89, 103);
+    padding: 5px 15px;
+    border: 2px solid rgb(16, 16, 16);
+    border-radius: 100px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .filter.active, .filter:hover {
+    background-color: #6e9e9f;
+    border-radius: 5px;
+  }
+  
+  .delete-all {
+    display: flex;
+    color: rgb(8, 89, 103);
+    border: 2px solid rgb(16, 16, 16);
+    border-radius: 100px;
+    padding: 7px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .delete-all:hover {
+    border-radius: 5px;
+    background-color: #f34040;
+  }
+
